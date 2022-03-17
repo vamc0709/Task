@@ -8,7 +8,7 @@ namespace Task.Controllers;
 
 
 [ApiController]
-[Route("Api/Controller")]
+[Route("Api/staff")]
 
 public class RoomServiceStaffController : ControllerBase
 {

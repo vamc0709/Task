@@ -7,7 +7,7 @@ namespace Task.Controllers;
 
 
 [ApiController]
-[Route("Api/ScheduleController")]
+[Route("Api/Schedule")]
 
 public class ScheduleController : ControllerBase
 {
@@ -49,7 +49,7 @@ public class ScheduleController : ControllerBase
         var user = await _Schedule.GetById(stay_schedule_id);
 
         if (user is null)
-            return NotFound("No user found with given stay schedule id");
+            return NotFound("No guest found with given stay schedule id");
 
         return Ok(user.asDTO);
     }
@@ -60,7 +60,7 @@ public class ScheduleController : ControllerBase
     {
         var existing = await _Schedule.GetById(stay_schedule_id);
         if (existing is null)
-            return NotFound("No user found with given stay schedule id");
+            return NotFound("No guest found with given stay schedule id");
 
         var didDelete = await _Schedule.Delete(stay_schedule_id);
 

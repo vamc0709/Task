@@ -38,7 +38,7 @@ public class GuestController : ControllerBase
         var guest = await _guest.GetById(guest_id);
 
         if (guest is null)
-            return NotFound("No Guest found with given guest_id");
+            return NotFound("No guest found with given guest_id");
 
 
         var dto = guest.asDTO;
@@ -66,7 +66,7 @@ public class GuestController : ControllerBase
     {
         var existing = await _guest.GetById(guest_id);
         if (existing is null)
-            return NotFound("No Guest found with given Guest Id");
+            return NotFound("No guest found with given Guest Id");
 
         var toUpdateGuest = existing with
         {
@@ -88,7 +88,7 @@ public class GuestController : ControllerBase
     {
         var existing = await _guest.GetById(guest_id);
         if (existing is null)
-            return NotFound("No user found with given guest id");
+            return NotFound("No guest found with given guest id");
 
         var didDelete = await _guest.Delete(guest_id);
 

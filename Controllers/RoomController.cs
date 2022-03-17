@@ -7,7 +7,7 @@ namespace Task.Controllers;
 
 
 [ApiController]
-[Route("Controller")]
+[Route("api/room")]
 
 public class RoomController : ControllerBase
 {
@@ -39,7 +39,7 @@ public class RoomController : ControllerBase
         var room  = await _room.GetById(room_id);
 
         if (room is null)
-            return NotFound("No user found with given room id");
+            return NotFound("No guest found with given room id");
             var dto = room.asDTO;
             dto.RoomServiceStaff = await _room.GetAllForRoom(room.RoomId);
 
